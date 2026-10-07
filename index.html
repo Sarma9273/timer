@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Persistent browser timer with an absolute end time.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
+<title>Persistent Timer</title>
+</head>
+<body><main class="app"><section class="card">
+<div class="eyebrow">PERSISTENT TIMER</div><h1>Timer</h1>
+<p class="subtitle">Set an end time. Closing or refreshing this page will not reset the timer.</p>
+<div id="status" class="status idle">Ready</div>
+<div class="display" aria-live="polite"><span id="display">00:00:00</span></div>
+<div class="progress-track"><div id="progress" class="progress"></div></div>
+<div class="grid">
+<label>Start time<input id="startAt" type="datetime-local"></label>
+<label>End time<input id="endAt" type="datetime-local"></label>
+</div>
+<div class="actions"><button id="startBtn" class="primary">Start Timer</button><button id="abortBtn" class="danger" disabled>Abort</button></div>
+<div class="meta"><div><span>Started</span><strong id="startedText">—</strong></div><div><span>Ends</span><strong id="endsText">—</strong></div></div>
+<p class="note">The timer state is stored in this browser. The countdown is calculated from absolute timestamps, so reloads and closing/reopening the page do not reset it.</p>
+</section></main><script src="app.js"></script></body></html>
